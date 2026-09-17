@@ -12,7 +12,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
 }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const displayImages = images.length > 0 ? images : ['https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'];
+  const displayImages = images.length > 0 ? images : ['/images/ss05-single-arm.jpg'];
 
   return (
     <div className="space-y-4">

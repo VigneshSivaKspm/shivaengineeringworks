@@ -16,7 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <article className="group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-400/50 transition-all duration-300 flex flex-col overflow-hidden">
-      <div className="relative overflow-hidden bg-slate-900">
+      <div className="relative overflow-hidden bg-slate-100">
         <Link to={`/products/${product.categorySlug}/${product.slug}`}>
           <ImageWithFallback
             src={product.images[0]}
@@ -28,12 +28,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
           {product.armType && product.armType !== 'N/A' && (
-            <span className="px-2.5 py-1 bg-slate-950/85 backdrop-blur-md text-amber-400 border border-amber-500/30 text-[11px] font-bold rounded-lg tracking-wider uppercase">
+            <span className="px-2.5 py-1 bg-white/95 backdrop-blur-md text-amber-800 border border-amber-300 shadow-xs text-[11px] font-extrabold rounded-lg tracking-wider uppercase">
               {product.armType}
             </span>
           )}
           {product.modelCode && (
-            <span className="px-2 py-1 bg-slate-900/80 backdrop-blur-md text-slate-300 text-[10px] font-mono rounded-lg">
+            <span className="px-2 py-1 bg-slate-900/90 backdrop-blur-md text-white text-[10px] font-mono font-bold rounded-lg shadow-xs">
               {product.modelCode}
             </span>
           )}

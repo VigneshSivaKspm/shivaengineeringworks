@@ -32,21 +32,22 @@
 
 /* Custom UI Utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(229, 231, 235, 0.7);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .dark-glass-panel {
-  background: rgba(11, 19, 37, 0.88);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0B1325 0%, #111E38 60%, #1E293B 100%);
+  background: linear-gradient(135deg, #FFFBEB 0%, #F8FAFC 50%, #F1F5F9 100%);
 }
 
 .amber-gradient {
@@ -54,11 +55,11 @@
 }
 
 .amber-glow {
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
 }
 
 .navy-glow {
-  box-shadow: 0 10px 30px -5px rgba(11, 19, 37, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(226, 232, 240, 0.8);
 }
 
 /* Scrollbar Styling */

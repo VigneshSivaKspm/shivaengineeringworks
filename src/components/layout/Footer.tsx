@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, PhoneCall, Mail, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
+import { PhoneCall, Mail, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { COMPANY_CONFIG } from '../../config/company';
 import { PRODUCT_CATEGORIES } from '../../data/categories';
 
@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 text-slate-300 border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 pt-16 pb-12 relative overflow-hidden">
       {/* Subtle Glow Accents */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -17,9 +17,11 @@ export const Footer: React.FC = () => {
           {/* Brand Column (2 cols width on lg) */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3 group inline-block">
-              <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black shadow-lg shadow-amber-500/20">
-                <Sun className="w-6 h-6 text-slate-950" />
-              </div>
+              <img
+                src="/images/shivaa-logo.png"
+                alt="Shivaa Engineering Works Logo"
+                className="h-11 w-auto object-contain rounded-xl bg-white p-1 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform"
+              />
               <div className="flex flex-col">
                 <span className="font-extrabold text-xl tracking-tight text-white leading-none">
                   SHIVAA <span className="text-amber-400 font-light">ENGINEERING</span>
@@ -30,7 +32,7 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
 
-            <p className="text-sm text-slate-400 leading-relaxed pr-4">
+            <p className="text-sm text-slate-300 leading-relaxed pr-4">
               Established in 2009, Shivaa Engineering Works is a leading Coimbatore-based manufacturer specializing in IS 800 compliant Solar Panel Mounting Structures, High-Performance Solar Street Light Poles, Single & Double Arm Lighting assemblies, and turnkey solar energy systems.
             </p>
 
@@ -47,37 +49,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link to="/" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <Link to="/" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <Link to="/about" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>About Us</span>
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <Link to="/products" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>Products Catalogue</span>
                 </Link>
               </li>
               <li>
-                <Link to="/products/solar-lighting-solutions" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-amber-300 font-semibold">
+                <Link to="/products/solar-lighting-solutions" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-amber-400 font-semibold">
                   <ArrowRight className="w-3 h-3 text-amber-400" />
                   <span>Solar Lighting Solutions</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <Link to="/services" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>Services</span>
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <Link to="/contact" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>Contact Us</span>
                 </Link>
@@ -95,7 +97,7 @@ export const Footer: React.FC = () => {
                 <li key={cat.id}>
                   <Link
                     to={`/products/${cat.slug}`}
-                    className="hover:text-amber-400 transition-colors flex items-center gap-1.5 truncate"
+                    className="hover:text-amber-400 transition-colors flex items-center gap-1.5 truncate text-slate-300"
                   >
                     <ArrowRight className="w-3 h-3 text-amber-500 flex-shrink-0" />
                     <span className="truncate">{cat.name}</span>
@@ -132,9 +134,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Location Strip */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {currentYear} <span className="text-slate-300 font-semibold">Shivaa Engineering Works</span>. All rights reserved.
+            © {currentYear} <span className="text-white font-semibold">Shivaa Engineering Works</span>. All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">

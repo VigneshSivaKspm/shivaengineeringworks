@@ -65,7 +65,7 @@ export const About: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900">
                 <img
-                  src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/mounting-structure-gi.jpg"
                   alt="Shivaa Engineering Works Solar Structure Facility"
                   className="w-full aspect-[4/3] object-cover"
                 />
@@ -131,38 +131,38 @@ export const About: React.FC = () => {
 
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl space-y-6">
-            <h3 className="text-2xl font-bold text-amber-400">Verified Business Information</h3>
+          <div className="bg-amber-50/90 text-slate-900 rounded-3xl p-8 sm:p-10 border border-amber-200 shadow-lg space-y-6">
+            <h3 className="text-2xl font-extrabold text-amber-900">Verified Business Information</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-700">
               <div className="space-y-2">
                 <div>
-                  <span className="font-semibold text-slate-400 block text-xs uppercase">Company Name</span>
-                  <span className="text-white font-bold">{COMPANY_CONFIG.name}</span>
+                  <span className="font-bold text-slate-500 block text-xs uppercase">Company Name</span>
+                  <span className="text-slate-900 font-bold">{COMPANY_CONFIG.name}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-slate-400 block text-xs uppercase">Year of Establishment</span>
-                  <span className="text-white font-bold">{COMPANY_CONFIG.establishedYear}</span>
+                  <span className="font-bold text-slate-500 block text-xs uppercase">Year of Establishment</span>
+                  <span className="text-slate-900 font-bold">{COMPANY_CONFIG.establishedYear}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-slate-400 block text-xs uppercase">Business Nature</span>
-                  <span className="text-white font-bold">Manufacturer & Service Provider</span>
+                  <span className="font-bold text-slate-500 block text-xs uppercase">Business Nature</span>
+                  <span className="text-slate-900 font-bold">Manufacturer & Service Provider</span>
                 </div>
               </div>
 
               <div className="space-y-2">
                 <div>
-                  <span className="font-semibold text-slate-400 block text-xs uppercase">Factory & Office Address</span>
-                  <span className="text-white font-bold">{COMPANY_CONFIG.location.address}</span>
+                  <span className="font-bold text-slate-500 block text-xs uppercase">Factory & Office Address</span>
+                  <span className="text-slate-900 font-bold">{COMPANY_CONFIG.location.address}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-slate-400 block text-xs uppercase">Primary Contact</span>
-                  <span className="text-amber-400 font-bold">{COMPANY_CONFIG.contact.phonePrimary}</span>
+                  <span className="font-bold text-slate-500 block text-xs uppercase">Primary Contact</span>
+                  <span className="text-amber-700 font-extrabold">{COMPANY_CONFIG.contact.phonePrimary}</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-800 flex justify-end">
+            <div className="pt-4 border-t border-amber-200/80 flex justify-end">
               <button
                 onClick={() => openQuoteModal()}
                 className="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition-colors flex items-center gap-2"

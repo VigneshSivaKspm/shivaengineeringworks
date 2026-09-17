@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { X, Sun, ChevronRight, PhoneCall, Mail, MapPin } from 'lucide-react';
+import { X, ChevronRight, PhoneCall, Mail, MapPin } from 'lucide-react';
 import { COMPANY_CONFIG } from '../../config/company';
 
 interface MobileMenuProps {
@@ -42,7 +42,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 lg:hidden bg-slate-950/80 backdrop-blur-md transition-opacity animate-fade-in"
+      className="fixed inset-0 z-50 lg:hidden bg-slate-900/60 backdrop-blur-md transition-opacity animate-fade-in"
       aria-modal="true"
       role="dialog"
       aria-label="Mobile Navigation"
@@ -50,25 +50,27 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-slate-900 text-white shadow-2xl flex flex-col border-l border-slate-800">
+      <div className="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-white text-slate-900 shadow-2xl flex flex-col border-l border-slate-200">
         {/* Header */}
-        <div className="p-5 flex items-center justify-between border-b border-slate-800">
+        <div className="p-5 flex items-center justify-between border-b border-slate-200 bg-slate-50">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
-              <Sun className="w-4 h-4" />
-            </div>
+            <img
+              src="/images/shivaa-logo.png"
+              alt="Shivaa Engineering Works Logo"
+              className="h-9 w-auto object-contain rounded-lg bg-white p-1 border border-slate-200"
+            />
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm tracking-tight text-white leading-none">
+              <span className="font-extrabold text-sm tracking-tight text-slate-900 leading-none">
                 SHIVAA
               </span>
-              <span className="text-[10px] text-amber-400 uppercase font-semibold">
+              <span className="text-[10px] text-amber-700 uppercase font-bold">
                 Engineering Works
               </span>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+            className="p-2 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
             aria-label="Close navigation menu"
           >
             <X className="w-6 h-6" />
@@ -83,12 +85,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               to={link.path}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                `flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500 text-slate-950 font-bold shadow-md'
+                    ? 'bg-amber-500 text-slate-950 font-extrabold shadow-sm'
                     : link.highlight
-                    ? 'bg-amber-500/10 text-amber-400 border border-amber-500/30 hover:bg-amber-500/20'
-                    : 'text-slate-200 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950'
                 }`
               }
             >
@@ -99,31 +101,31 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         </div>
 
         {/* CTA & Company Contact Footer */}
-        <div className="p-5 border-t border-slate-800 bg-slate-950/60 space-y-4">
+        <div className="p-5 border-t border-slate-200 bg-slate-50 space-y-4">
           <button
             onClick={() => {
               onClose();
               onOpenQuote();
             }}
-            className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20"
+            className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-md shadow-amber-500/20"
           >
             <span>Get Best Quote</span>
           </button>
 
-          <div className="space-y-2 text-xs text-slate-400 pt-2 border-t border-slate-800/80">
+          <div className="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-200">
             <a
               href={`tel:${COMPANY_CONFIG.contact.phonePrimary.replace(/\s+/g, '')}`}
-              className="flex items-center gap-2.5 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2.5 hover:text-amber-700 transition-colors font-semibold"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-amber-500" />
+              <PhoneCall className="w-3.5 h-3.5 text-amber-600" />
               <span>{COMPANY_CONFIG.contact.phonePrimary}</span>
             </a>
             <div className="flex items-center gap-2.5">
-              <Mail className="w-3.5 h-3.5 text-amber-500" />
+              <Mail className="w-3.5 h-3.5 text-amber-600" />
               <span>{COMPANY_CONFIG.contact.emailPrimary}</span>
             </div>
             <div className="flex items-start gap-2.5">
-              <MapPin className="w-3.5 h-3.5 text-amber-500 mt-0.5 flex-shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-amber-600 mt-0.5 flex-shrink-0" />
               <span className="leading-tight">Chinnavedampatty, Coimbatore - 641049</span>
             </div>
           </div>

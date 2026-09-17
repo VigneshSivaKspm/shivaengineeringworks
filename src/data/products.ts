@@ -10,8 +10,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Industrial single arm solar street lighting system engineered for rural roads, campus pathways, and industrial premises.',
     fullDescription: 'The SS01 Single Arm Solar Street Light by Shivaa Engineering Works features a robust hot-dip galvanized steel pole with integrated solar panel mounting bracket and high-lumen LED luminaire. Designed for heavy outdoor usage and weather exposure in Indian climate conditions.',
     images: [
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss01-single-arm.jpg',
+      '/images/street-light-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS01-SA',
@@ -51,8 +51,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Heavy-duty tubular single arm solar street lighting assembly built for highway service roads and commercial parks.',
     fullDescription: 'Model SS03 is a specialized single arm solar lighting structure built with high-grade steel sections, featuring reinforced overhang arm brackets, integrated battery housing, and corrosion-resistant fasteners.',
     images: [
-      'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss03-single-arm.jpg',
+      '/images/street-light-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS03-SA',
@@ -89,7 +89,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Precision engineered single arm octagonal solar street pole with aerodynamic curve arm bracket.',
     fullDescription: 'The SS05 Single Arm Solar Street Light structure offers modern octagonal aesthetics combined with structural strength. Ideal for smart city lighting projects and high-visibility corporate avenues.',
     images: [
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss05-single-arm.jpg',
+      '/images/octagonal-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS05-SA',
@@ -126,7 +127,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Dual arm solar lighting structure for central verge and dual carriageway road illumination.',
     fullDescription: 'Shivaa Engineering Works SS06 Double Arm Solar Street Light is tailored for median installations where dual direction illumination is required. Houses two opposing luminaires fed by a centralized top-mounted solar array structure.',
     images: [
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss06-double-arm.jpg',
+      '/images/double-arm-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS06-DA',
@@ -163,7 +165,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Streamlined single arm solar pole designed for aesthetic urban lighting and commercial complexes.',
     fullDescription: 'Model SS07 single arm solar street light combines aesthetic architecture with durable structural design. Customized height options available to meet municipal lighting standards.',
     images: [
-      'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss07-single-arm.jpg',
+      '/images/street-light-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS07-SA',
@@ -198,7 +201,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Industrial grade double arm solar street pole engineered for heavy-duty outdoor median installations.',
     fullDescription: 'The SS08 Double Arm model is built with double side extension arms mounted at 180 degrees. Designed to illuminate broad road cross-sections with single solar infrastructure support.',
     images: [
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss08-double-arm.jpg',
+      '/images/double-arm-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS08-DA',
@@ -235,7 +239,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Octagonal double arm solar street light pole with heavy-duty structural base flange.',
     fullDescription: 'SS09 is an octagonal dual-arm solar lighting structure manufactured with high tensile steel sheets bent into precise tapered octagonal sections.',
     images: [
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss09-double-arm.jpg',
+      '/images/double-arm-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS09-DA',
@@ -271,7 +276,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Premium double arm solar pole assembly designed for maximum coverage and longevity.',
     fullDescription: 'The SS10 Double Arm model represents Shivaa Engineering Works heavy-series solar street light design with reinforced gusset plates and elevated solar panel structure.',
     images: [
-      'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss10-double-arm.jpg',
+      '/images/double-arm-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS10-DA',
@@ -305,8 +311,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'High mast steel lighting tower (12m - 30m) with polygonal shaft and lantern ring mechanism for wide area coverage.',
     fullDescription: 'Shivaa Engineering Works manufactures heavy-duty High Mast Lighting Poles for expansive industrial spaces, traffic junctions, and sports grounds. Features continuous polygonal tapered steel sections hot-dip galvanized for extreme durability.',
     images: [
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'
+      '/images/high-mast-pole.jpg',
+      '/images/octagonal-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'HM-POLE-SERIES',
@@ -344,7 +350,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Dual arm solar light structure engineered for rural infrastructure and Panchayat roadway projects.',
     fullDescription: 'The SS12 Double Arm is optimized for robust cost-effective rural road illumination. Built with weather-treated tubular steel section and dual mounting brackets.',
     images: [
-      'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss12-double-arm.jpg',
+      '/images/double-arm-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS12-DA',
@@ -378,7 +385,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Compact single arm solar street pole for residential layouts and private industrial roadways.',
     fullDescription: 'Model SS13 Single Arm solar light is designed for efficient 5m to 6m mounting height requirement with easy assembly and maintenance.',
     images: [
-      'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss13-single-arm.jpg',
+      '/images/street-light-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS13-SA',
@@ -411,7 +419,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Heavy single arm solar pole configuration for industrial perimeter security and warehouse lighting.',
     fullDescription: 'The SS15 model provides high elevation single arm solar light mounting for perimeter security fences, factory boundary walls, and logistics yards.',
     images: [
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      '/images/ss14-double-arm.jpg',
+      '/images/street-light-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SS15-SA',
@@ -445,7 +454,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Custom manufactured swaged tubular and tapered octagonal steel street light poles.',
     fullDescription: 'Shivaa Engineering Works supplies high quality non-solar and solar-ready galvanized steel street light poles in heights from 3m to 12m, custom fabricated according to IS specifications.',
     images: [
-      'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      '/images/street-light-pole.jpg',
+      '/images/octagonal-pole.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SEW-SLP-STD',
@@ -480,8 +490,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'IS 800 code compliant galvanized rooftop mounting structure engineered for metal tile, RCC, and trapezoidal roofs.',
     fullDescription: 'Shivaa Engineering Works specializes in custom designing and fabricating solar module mounting structures for industrial rooftops. Manufactured with high yield steel profiles, hot-dip galvanized to ensure 25+ years structural service life.',
     images: [
-      'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80'
+      '/images/mounting-structure-rooftop.jpg',
+      '/images/mounting-structure-2m.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SEW-RMS-100',
@@ -518,7 +528,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Heavy ground-mounted fixed-tilt solar structural framing for megawatt solar power plants.',
     fullDescription: 'Engineered for utility-scale solar farms and commercial captive solar power plants. Built with heavy cold-formed galvanized C & Z purlins, columns, and rafter beams.',
     images: [
-      'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1000&q=80'
+      '/images/mounting-structure-ground.jpg',
+      '/images/mounting-structure-1mw.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SEW-GMS-MW',
@@ -552,7 +563,8 @@ export const PRODUCTS: Product[] = [
     shortDescription: 'Turnkey commercial and industrial grid-tied solar photovoltaic energy system.',
     fullDescription: 'Complete on-grid solar plant engineering by Shivaa Engineering Works, including tier-1 solar PV modules, grid tie inverters, net metering protection panels, and heavy-duty structural mountings.',
     images: [
-      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80'
+      '/images/on-grid-solar-system.jpg',
+      '/images/5kw-on-grid-system.jpg'
     ],
     priceLabel: 'Price on Request',
     modelCode: 'SEW-OGS-SERIES',

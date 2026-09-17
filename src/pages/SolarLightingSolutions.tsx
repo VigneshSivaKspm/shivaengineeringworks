@@ -71,12 +71,12 @@ export const SolarLightingSolutions: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-4 bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 space-y-4">
-              <div className="flex items-center gap-2 text-amber-400 font-bold text-sm">
-                <Sun className="w-5 h-5" />
+            <div className="lg:col-span-4 bg-amber-50/80 text-slate-900 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2 text-amber-800 font-extrabold text-sm">
+                <Sun className="w-5 h-5 text-amber-600" />
                 <span>Bulk Commercial Inquiries</span>
               </div>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Need customized pole heights, specific lumen outputs, or Panchayat bulk pricing? Contact our Coimbatore sales desk directly.
               </p>
               <button
