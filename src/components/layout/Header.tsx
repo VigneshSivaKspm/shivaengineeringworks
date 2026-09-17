@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Sun, PhoneCall, ChevronDown, Menu, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { NavLink, Link } from 'react-router-dom';
+import { PhoneCall, Menu, MapPin, Clock } from 'lucide-react';
 import { COMPANY_CONFIG } from '../../config/company';
-import { PRODUCT_CATEGORIES } from '../../data/categories';
 
 interface HeaderProps {
   onOpenQuote: () => void;
@@ -16,8 +15,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenMobileMenu,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const location = useLocation();
 
   // Sticky header background transition on scroll
   useEffect(() => {
@@ -31,11 +28,6 @@ export const Header: React.FC<HeaderProps> = ({
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close dropdown on route change
-  useEffect(() => {
-    setIsProductsDropdownOpen(false);
-  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-300">
@@ -122,81 +114,6 @@ export const Header: React.FC<HeaderProps> = ({
               }
             >
               About Us
-            </NavLink>
-
-            {/* Products Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsProductsDropdownOpen(true)}
-              onMouseLeave={() => setIsProductsDropdownOpen(false)}
-            >
-              <NavLink
-                to="/products"
-                className={({ isActive }) =>
-                  `px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${
-                    isActive || location.pathname.startsWith('/products')
-                      ? 'text-amber-700 bg-amber-50 font-bold border border-amber-200/80'
-                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
-                  }`
-                }
-              >
-                <span>Products</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isProductsDropdownOpen ? 'rotate-180' : ''}`} />
-              </NavLink>
-
-              {/* Dropdown Menu */}
-              {isProductsDropdownOpen && (
-                <div className="absolute top-full left-0 w-80 bg-white border border-slate-200 rounded-2xl shadow-xl p-3 grid gap-1 z-50 animate-fade-in backdrop-blur-xl">
-                  <div className="px-3 py-1.5 border-b border-slate-100 text-[11px] font-extrabold uppercase tracking-wider text-amber-700">
-                    Product Categories
-                  </div>
-                  {PRODUCT_CATEGORIES.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      to={`/products/${cat.slug}`}
-                      className="px-3 py-2.5 rounded-xl hover:bg-amber-50 text-xs font-semibold text-slate-700 hover:text-amber-800 transition-colors flex items-center justify-between group"
-                    >
-                      <span>{cat.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-amber-600" />
-                    </Link>
-                  ))}
-                  <div className="pt-2 border-t border-slate-100 mt-1">
-                    <Link
-                      to="/products"
-                      className="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold rounded-xl flex items-center justify-between transition-colors border border-amber-200/60"
-                    >
-                      <span>View Complete Catalogue</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-amber-700" />
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Specialized High Priority Link */}
-            <NavLink
-              to="/products/solar-lighting-solutions"
-              className={({ isActive }) =>
-                `px-3.5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${
-                  isActive
-                    ? 'bg-amber-500 text-slate-950 font-bold shadow-sm'
-                    : 'text-amber-800 bg-amber-50 border border-amber-300/80 hover:bg-amber-100'
-                }`
-              }
-            >
-              <Sun className="w-4 h-4 text-amber-600" />
-              <span>Solar Solutions</span>
-            </NavLink>
-
-            <NavLink
-              to="/services"
-              className={({ isActive }) =>
-                `px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                  isActive ? 'text-amber-700 bg-amber-50 font-bold border border-amber-200/80' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
-                }`
-              }
-            >
-              Services
             </NavLink>
 
             <NavLink

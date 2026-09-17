@@ -34,9 +34,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Products Catalogue', path: '/products' },
-    { name: 'Solar Lighting Solutions', path: '/products/solar-lighting-solutions', highlight: true },
-    { name: 'Engineering Services', path: '/services' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -88,8 +85,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 `flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                   isActive
                     ? 'bg-amber-500 text-slate-950 font-extrabold shadow-sm'
-                    : link.highlight
-                    ? 'bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100'
                     : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950'
                 }`
               }

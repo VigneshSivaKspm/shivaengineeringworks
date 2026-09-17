@@ -1,8 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/home/Hero';
 import { TrustStrip } from '../components/home/TrustStrip';
-import { CategoryGrid } from '../components/home/CategoryGrid';
-import { FeaturedProducts } from '../components/home/FeaturedProducts';
 import { EngineeringCapabilities } from '../components/home/EngineeringCapabilities';
 import { ApplicationsSection } from '../components/home/ApplicationsSection';
 import { useSEO } from '../utils/seo';
@@ -30,8 +28,6 @@ export const Home: React.FC = () => {
 
       <Hero />
       <TrustStrip />
-      <CategoryGrid />
-      <FeaturedProducts />
       <EngineeringCapabilities />
       <ApplicationsSection />
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Grid, AlertTriangle } from 'lucide-react';
+import { Home, Mail, AlertTriangle } from 'lucide-react';
 import { useSEO } from '../utils/seo';
 
 export const NotFound: React.FC = () => {
@@ -33,11 +33,11 @@ export const NotFound: React.FC = () => {
             <span>Back Home</span>
           </Link>
           <Link
-            to="/products"
+            to="/contact"
             className="w-full sm:w-auto px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl text-xs transition-colors border border-slate-700 flex items-center justify-center gap-1.5"
           >
-            <Grid className="w-4 h-4 text-amber-400" />
-            <span>Browse Products</span>
+            <Mail className="w-4 h-4 text-amber-400" />
+            <span>Contact Us</span>
           </Link>
         </div>
       </div>

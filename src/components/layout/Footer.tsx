@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhoneCall, Mail, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { COMPANY_CONFIG } from '../../config/company';
-import { PRODUCT_CATEGORIES } from '../../data/categories';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +12,7 @@ export const Footer: React.FC = () => {
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
           {/* Brand Column (2 cols width on lg) */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3 group inline-block">
@@ -61,49 +60,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
-                  <ArrowRight className="w-3 h-3 text-amber-500" />
-                  <span>Products Catalogue</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/solar-lighting-solutions" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-amber-400 font-semibold">
-                  <ArrowRight className="w-3 h-3 text-amber-400" />
-                  <span>Solar Lighting Solutions</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
-                  <ArrowRight className="w-3 h-3 text-amber-500" />
-                  <span>Services</span>
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
                   <ArrowRight className="w-3 h-3 text-amber-500" />
                   <span>Contact Us</span>
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Key Product Categories Column */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
-              Product Categories
-            </h3>
-            <ul className="space-y-2.5 text-sm">
-              {PRODUCT_CATEGORIES.slice(0, 5).map((cat) => (
-                <li key={cat.id}>
-                  <Link
-                    to={`/products/${cat.slug}`}
-                    className="hover:text-amber-400 transition-colors flex items-center gap-1.5 truncate text-slate-300"
-                  >
-                    <ArrowRight className="w-3 h-3 text-amber-500 flex-shrink-0" />
-                    <span className="truncate">{cat.name}</span>
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
 

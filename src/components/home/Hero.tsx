@@ -47,10 +47,10 @@ export const Hero: React.FC = () => {
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
-                to="/products/solar-lighting-solutions"
+                to="/contact"
                 className="px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
-                <span>Explore Products</span>
+                <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
