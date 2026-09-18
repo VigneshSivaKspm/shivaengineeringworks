@@ -3,7 +3,7 @@ import { PageHero } from '../components/common/PageHero';
 import { COMPANY_CONFIG } from '../config/company';
 import { useSEO } from '../utils/seo';
 import { MapPin, PhoneCall, Mail, Clock, Send, CheckCircle2, AlertCircle, User, Phone } from 'lucide-react';
-import { submitQuoteRequest } from '../services/enquiryService';
+import { submitContactFormRequest } from '../services/enquiryService';
 
 export const Contact: React.FC = () => {
   useSEO({
@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
 
     try {
       setIsSubmitting(true);
-      const res = await submitQuoteRequest({
+      const res = await submitContactFormRequest({
         fullName: formData.fullName,
         phone: formData.phone,
         email: formData.email,

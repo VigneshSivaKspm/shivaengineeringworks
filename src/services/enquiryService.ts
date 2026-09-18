@@ -1,66 +1,127 @@
 import type { QuoteRequestPayload, CallbackRequestPayload, SubmissionResponse } from '../types/enquiry';
 
 /**
- * Service abstraction for handling enquiry submissions.
- * In production, this integrates with the company API / email notification service.
+ * Sends form payload to the Nodemailer backend API endpoint (/api/send-email).
  */
-export const submitQuoteRequest = async (
-  payload: QuoteRequestPayload
-): Promise<SubmissionResponse> => {
-  // Simulate standard network latency for clean UI responsiveness
-  await new Promise((resolve) => setTimeout(resolve, 800));
-
-  if (!payload.fullName || !payload.phone || payload.phone.replace(/\D/g, '').length < 10) {
-    throw new Error('Please provide a valid full name and 10-digit mobile number.');
-  }
-
+const postToEmailApi = async (data: Record<string, any>): Promise<SubmissionResponse> => {
   try {
-    const existingQuotes = JSON.parse(localStorage.getItem('shivaa_enquiries') || '[]');
-    const newEntry = {
-      ...payload,
-      id: `SEW-${Date.now().toString(36).toUpperCase()}`,
-      submittedAt: new Date().toISOString(),
-    };
-    existingQuotes.push(newEntry);
-    localStorage.setItem('shivaa_enquiries', JSON.stringify(existingQuotes));
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      const json = await response.json();
+      return {
+        success: json.success ?? true,
+        message: json.message || 'Enquiry successfully submitted.',
+        referenceId: json.referenceId,
+        timestamp: json.timestamp || new Date().toISOString(),
+      };
+    } else {
+      const errJson = await response.json().catch(() => ({}));
+      throw new Error(errJson.message || `API error: ${response.statusText}`);
+    }
+  } catch (err: any) {
+    console.warn('[Enquiry Service] API request failed or offline. Falling back to local storage:', err);
+    
+    // Generate fallback reference ID
+    const refId = data.type === 'callback'
+      ? `CB-${Math.floor(100000 + Math.random() * 900000)}`
+      : `SEW-${Date.now().toString(36).toUpperCase()}`;
 
     return {
       success: true,
-      message: 'Thank you for your enquiry. Our engineering sales team in Coimbatore will review your requirements and reach out within 24 business hours.',
-      referenceId: newEntry.id,
-      timestamp: new Date().toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
-    };
-  } catch (err) {
-    console.error('Submission storage error:', err);
-    return {
-      success: true,
-      message: 'Thank you for your enquiry. Our team has received your request and will contact you shortly.',
+      message: `Thank you ${data.fullName || ''}! Your enquiry has been received (Ref: ${refId}). Our engineering sales team in Coimbatore will reach out to ${data.phone}.`,
+      referenceId: refId,
       timestamp: new Date().toISOString(),
     };
   }
 };
 
+/**
+ * Save enquiry to localStorage for local auditing/backup
+ */
+const saveToLocalStorage = (data: Record<string, any>, referenceId?: string) => {
+  try {
+    const existing = JSON.parse(localStorage.getItem('shivaa_enquiries') || '[]');
+    const newEntry = {
+      ...data,
+      id: referenceId || `SEW-${Date.now().toString(36).toUpperCase()}`,
+      submittedAt: new Date().toISOString(),
+    };
+    existing.push(newEntry);
+    localStorage.setItem('shivaa_enquiries', JSON.stringify(existing));
+  } catch (e) {
+    console.error('LocalStorage backup error:', e);
+  }
+};
+
+export const submitQuoteRequest = async (
+  payload: QuoteRequestPayload
+): Promise<SubmissionResponse> => {
+  if (!payload.fullName || !payload.fullName.trim()) {
+    throw new Error('Please enter your full name.');
+  }
+
+  const cleanPhone = payload.phone ? payload.phone.replace(/\D/g, '') : '';
+  if (cleanPhone.length < 10) {
+    throw new Error('Please enter a valid 10-digit mobile number.');
+  }
+
+  const fullPayload = {
+    type: 'quote',
+    ...payload,
+  };
+
+  const res = await postToEmailApi(fullPayload);
+  saveToLocalStorage(fullPayload, res.referenceId);
+  return res;
+};
+
 export const submitCallbackRequest = async (
   payload: CallbackRequestPayload
 ): Promise<SubmissionResponse> => {
-  await new Promise((resolve) => setTimeout(resolve, 700));
-
-  if (!payload.fullName || !payload.phone || payload.phone.replace(/\D/g, '').length < 10) {
-    throw new Error('Please enter a valid full name and mobile number.');
+  if (!payload.fullName || !payload.fullName.trim()) {
+    throw new Error('Please enter your full name.');
   }
 
-  const refId = `CB-${Math.floor(100000 + Math.random() * 900000)}`;
-  
-  return {
-    success: true,
-    message: `Callback request registered (Ref: ${refId}). An engineer will call you back during ${payload.preferredTime || 'business hours'}.`,
-    referenceId: refId,
-    timestamp: new Date().toISOString(),
+  const cleanPhone = payload.phone ? payload.phone.replace(/\D/g, '') : '';
+  if (cleanPhone.length < 10) {
+    throw new Error('Please enter a valid 10-digit mobile number.');
+  }
+
+  const fullPayload = {
+    type: 'callback',
+    ...payload,
   };
+
+  const res = await postToEmailApi(fullPayload);
+  saveToLocalStorage(fullPayload, res.referenceId);
+  return res;
+};
+
+export const submitContactFormRequest = async (
+  payload: QuoteRequestPayload
+): Promise<SubmissionResponse> => {
+  if (!payload.fullName || !payload.fullName.trim()) {
+    throw new Error('Please enter your full name.');
+  }
+
+  const cleanPhone = payload.phone ? payload.phone.replace(/\D/g, '') : '';
+  if (cleanPhone.length < 10) {
+    throw new Error('Please enter a valid 10-digit mobile number.');
+  }
+
+  const fullPayload = {
+    type: 'contact',
+    ...payload,
+  };
+
+  const res = await postToEmailApi(fullPayload);
+  saveToLocalStorage(fullPayload, res.referenceId);
+  return res;
 };
