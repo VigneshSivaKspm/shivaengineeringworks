@@ -8,7 +8,7 @@ import { submitContactFormRequest } from '../services/enquiryService';
 export const Contact: React.FC = () => {
   useSEO({
     title: 'Contact Us | Shivaa Engineering Works Coimbatore',
-    description: 'Get in touch with Shivaa Engineering Works in Coimbatore, Tamil Nadu. Address: 108/1 Athipalayam Road, Chinnavedampatty. Phone: +91 98422 47372.',
+    description: 'Get in touch with Shivaa Engineering Works in Coimbatore, Tamil Nadu. Address: 108/1 Athipalayam Road, Chinnavedampatty. Phone: +91 96001 34460.',
     keywords: 'Contact Shivaa Engineering Works, Coimbatore Solar Factory Address, Solar Street Pole Quotation',
   });
 

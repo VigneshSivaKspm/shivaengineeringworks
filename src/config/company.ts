@@ -46,11 +46,10 @@ export const COMPANY_CONFIG: CompanyConfig = {
     googleMapsUrl: 'https://maps.google.com/?q=108/1+Athipalayam+Road+Chinnavedampatty+Coimbatore+Tamil+Nadu+641049',
   },
   contact: {
-    phonePrimary: '+91 98422 47372',
-    phoneSecondary: '+91 94437 24372',
+    phonePrimary: '+91 96001 34460',
     emailPrimary: 'info@shivaaengineering.in',
-    whatsappNumber: '919842247372',
-    whatsappFormatted: '+91 98422 47372',
+    whatsappNumber: '919600134460',
+    whatsappFormatted: '+91 96001 34460',
     workingHours: 'Monday - Saturday: 9:00 AM - 7:00 PM IST',
   },
   manufacturing: {
