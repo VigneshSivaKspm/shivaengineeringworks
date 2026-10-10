@@ -1,3 +1,4 @@
+throw new Error("Internal Server Error");
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
